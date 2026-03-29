@@ -1,0 +1,1 @@
+"""Mock WATI API application."""

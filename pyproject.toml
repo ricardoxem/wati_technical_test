@@ -1,0 +1,41 @@
+[project]
+name = "wati-agent"
+version = "0.1.0"
+description = "CLI-based WATI automation agent for the CAB engineering assignment."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "fastapi>=0.116.0",
+  "httpx>=0.28.0",
+  "pydantic>=2.11.0",
+  "pydantic-settings>=2.10.0",
+  "rich>=14.0.0",
+  "typer>=0.17.0",
+  "uvicorn>=0.35.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.4.0",
+  "ruff>=0.12.0",
+]
+ollama = [
+  "ollama>=0.5.0",
+]
+openai = [
+  "openai>=1.99.0",
+]
+
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
